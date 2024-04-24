@@ -1,38 +1,52 @@
 
 
-public class ServiceStation implements UpdateTyre {
+public  class ServiceStation implements UpdateTyre {
+
     @Override
     public void updateTyre(Truck truck) {
         System.out.println("Меняем покрышку");
     }
+
     @Override
     public void updateTyre(Bicycle bicycle) {
         System.out.println("Меняем покрышку");
     }
+
     @Override
     public void updateTyre(Car car) {
         System.out.println("Меняем покрышку");
     }
+
+    @Override
+    public void checkEngine(Truck truck) {
+    }
+    public void checkTrailer(Truck truck) {
+    }
+    public void checkEngine(Car car) {
+    }
     public void check(Car car) {
-        System.out.println("Обслуживаем " + car.getModelName());
-        for (int i = 0; i < car.getWheelsCount(); i++) {
-            updateTyre(car);
+
+            System.out.println("Обслуживаем " + car.getModelName());
+            for (int i = 0; i < car.getWheelsCount(); i++) {
+                updateTyre(car);
+            }
+           checkEngine(car);}
+        public void check(Truck truck) {
+            System.out.println("Обслуживаем " + truck.getModelName());
+            for (int i = 0; i < truck.getWheelsCount(); i++) {
+                updateTyre(truck);
+            }
+            checkEngine(truck);
+            checkTrailer(truck);
         }
-        car.checkEngine();
-    }
-    public void check(Truck truck) {
-        System.out.println("Обслуживаем " + truck.getModelName());
-        for (int i = 0; i < truck.getWheelsCount(); i++) {
-            truck.updateTyre();
-        }
-        truck.checkEngine();
-        truck.checkTrailer();
-    }
+
+
     public void check(Bicycle bicycle) {
-        System.out.println("Обслуживаем " + bicycle.getModelName());
-        for (int i = 0; i < bicycle.getWheelsCount(); i++) {
-            bicycle.updateTyre();
-        }
+            System.out.println("Обслуживаем " + bicycle.getModelName());
+            for (int i = 0; i < bicycle.getWheelsCount(); i++) {
+                updateTyre(bicycle);
+            }
+
     }
 
 }
