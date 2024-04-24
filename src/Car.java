@@ -1,25 +1,4 @@
-public class Car {
-
-    public String modelName;   //Заменил public не соответствует принципу инкапсуляции
-    public int wheelsCount;     //Заменил public не соответствует принципу инкапсуляции
-
-
-
-    public String getModelName() {
-        return modelName;
-    }
-
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
-    }
-
-    public int getWheelsCount() {
-        return wheelsCount;
-    }
-
-    public void setWheelsCount(int wheelsCount) {
-        this.wheelsCount = wheelsCount;
-    }
+public class Car extends Vehicle {
 
     public void updateTyre() {
         System.out.println("Меняем покрышку");
@@ -28,4 +7,9 @@ public class Car {
     public void checkEngine() {
         System.out.println("Проверяем двигатель");
     }
+
+    public Car(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
+
 }

@@ -1,7 +1,7 @@
-public class Bicycle {
-
-    public String modelName;       //Заменил public не соответствует принципу инкапсуляции
-    public int wheelsCount;        //Заменил public не соответствует принципу инкапсуляции
+public class Bicycle extends Vehicle {
+    public Bicycle(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
 
     public void updateTyre() {
         System.out.println("Меняем покрышку");
