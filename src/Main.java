@@ -1,25 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("car1", 4);
-        Car car2 = new Car("car2", 4);
-
-
-        Truck truck = new Truck("truck1", 6);
-        Truck truck2 = new Truck("truck2", 8);
-
-        Bicycle bicycle = new Bicycle("bicycle1", 2);
-        Bicycle bicycle2 = new Bicycle("bicycle2", 2);
-
         ServiceStation serviceStation = new ServiceStation();
-
-        service(serviceStation, truck, bicycle, car);
-        service(serviceStation, truck2, bicycle2, car2);
-    }
-
-    private static void service(ServiceStation serviceStation, Truck truck, Bicycle bicycle, Car car) {
-        serviceStation.check(car);
+        Truck truck = new Truck("Камаз", 8);
         serviceStation.check(truck);
-        serviceStation.check(bicycle);
+        Vehicle [] vehicle=new Vehicle[6];
+        vehicle[0] =new Car("car1", 4) ;
+        vehicle[1]  = new Car("car2", 4);
+        vehicle[2] = new Truck("truck1", 6);
+        vehicle[3] = new Truck("truck2", 8);
+        vehicle[4] = new Bicycle("bicycle1", 2);
+        vehicle[5] = new Bicycle("bicycle2", 2);
+
+
+
+        for (int i = 0; i < vehicle.length; i++) {
+        serviceStation.check(vehicle[i]);
+
+        }
+
     }
+
+
+
 
 }

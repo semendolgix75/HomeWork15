@@ -3,7 +3,13 @@ public class Bicycle extends Vehicle {
         super(modelName, wheelsCount);
     }
 
+    @Override
     public void updateTyre() {
-        System.out.println("Меняем покрышку");
+        super.updateTyre();
+    }
+
+    @Override
+    public void check() {
+        super.check();
     }
 }
